@@ -24,6 +24,8 @@ const config: Config = {
       darkBlue: 'hsl(235, 46%, 20%)',
       desaturatedBlue: 'hsl(235, 45%, 61%)',
       paleBlue: 'hsl(236, 100%, 87%)',
+      white: 'hsl(0, 0%, 100%)',
+      cardHover: 'hsl(236, 41%, 34%)',
       
           },
     fontFamily: {
