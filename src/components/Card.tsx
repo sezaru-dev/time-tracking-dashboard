@@ -1,16 +1,21 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import clsx from 'clsx';
 import { CardProps } from '@/time-tracker-types'
 import { formatHours } from '@/utils/hour-format'
 import Ellipsis from './SVG/Ellipsis'
+import { motion } from 'framer-motion'
+import { Fade } from '@/utils/motion';
 
 const Card = ({ title, timeframes, imageSrc, timeFrameType }:CardProps) => {
   const current = timeframes[timeFrameType].current;
   const previous = timeframes[timeFrameType].previous;
   
   return (
-    <article className={clsx(
+    <motion.article
+      variants={Fade()}
+      className={clsx(
       'h-[10rem] lg:h-[15rem] p-6 lg:p-8 relative overflow-hidden rounded-2xl',
       {'bg-orange': title == "Work"},
       {'bg-softBlue': title == "Play"},
@@ -34,7 +39,7 @@ const Card = ({ title, timeframes, imageSrc, timeFrameType }:CardProps) => {
           - {formatHours(previous) }</p>
         </div>
       </div>
-    </article>
+    </motion.article>
   )
 }
 
